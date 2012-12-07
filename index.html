@@ -1,96 +1,163 @@
-<!doctype html>
-<html>
-    <head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Untitled</title>
-        <script type="text/javascript" src="media/jquery-1.8.min.js"></script>
-        <style type="text/css">
-        body {
-          font-family: arial;
-          font-size: 13px;
-        }
-         .information {
-         	display: none;
-         }
-         #wrapper {
-          width: 550px;
-          height: 430px;
-         }
-         #imagePlacement {
-          text-align: center;
-          margin-top: 5px;
-         
-         }
-         .stressBtn {
-          margin-right: 10px;
-         }
-        </style>
-        <script type="text/javascript" charset="utf-8">
-        $(function(){
-        	$sel = {
-        		btn : $('.stressBtn'), 
-        		information: $('.information')
-        	}
-        	$sel.btn.click(function(){
-        		$sel.information.hide();
-        		$("#" + $(this).attr("number")).show();
-        	});
-          var img_src = "";
-          var new_src = "";
- 
-          $sel.btn.hover(function(){
-            //mouseover
-            img_src = $(this).attr('src'); //grab original image
-            new_src = $(this).attr('rel'); //grab rollover image
-            $(this).attr('src', new_src); //swap images
-            $(this).attr('rel', img_src); //swap images
-          },
-          function(){
-          //mouse out
-          $(this).attr('src', img_src); //swap images
-          $(this).attr('rel', new_src); //swap images
-          });
-     
-          //preload images
-          var cache = new Array();
-          //cycle through all rollover elements and add rollover img src to cache array
-          $sel.btn.each(function(){
-          var cacheImage = document.createElement('img');
-          cacheImage.src = $(this).attr('rel');
-          cache.push(cacheImage);
-        }); 
 
-      });
+<link rel="stylesheet" type="text/css" href="media/main.css"/>
 
-        </script>
-    </head>
-    <body>
-     <div id="wrapper">
-     With a sick child, siblings also experience stress and suffer a wide range of feelings, thoughts and reactions.
+ <script src="media/jquery-1.8.min.js" type="text/javascript" charset="utf-8" ></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".pg10PicButton").click(function() {
+			$(".modal-content").animate({ left: -510 }, { duration: 1000 });
+			$(".modalHidden").hide();
+      		$("#"+$(this).attr("label")).show();
+		});
+		
+		$(".return").click(function() {
+			$(".modal-content").animate({ left: 0 }, { duration: 1000 });
+			$(".slide1Visible").show();
+			$(".slide1Hidden").hide();
+		});
+	
+		$(".pg10PicButton").mouseover (function() {
+			$(this).children(".pg10BlueButton").css("background-color", "#EEBB00");
+		}).mouseout (function() {
+			$(this).children(".pg10BlueButton").css("background-color", "#3399FF");
+		});
+	
+		$(".return").mouseover (function() {
+			$(this).css("border-color", "#000000");
+		}).mouseout (function() {
+			$(this).css("border-color", "#CCCCCC");
+		});
 
-<ul>
-<li>Siblings may feel left out as parents spend time at the hospital or they may worry that they too will get sick.</li>
-<li>Siblings may feel they are to blame and their jealous feelings toward the new sibling may be the cause of tragedy.</li> 
-<li>Siblings may believe their bad behavior may be causing their parents' obvious distress.</li>
-<li>Siblings may also show resentment toward their parents at the perceived loss of attention.</li>
-</ul>
-Depending upon the child's age, the sibling will use various coping mechanisms to deal with his or her stress. Regression and acting out are not uncommon. Encourage the parents to discuss how the siblings are reacting and coping with the family crisis and provide referral to social services and family support groups as appropriate. <em>Click each question mark to see characteristics of a child's developmental level and age–appropriate interventions..</em> 
+	
+	function showHidden() {
+		$(".slide1Visible").hide();
+		$(".slide1Hidden").show();
+	}
 
-  <div id ="imagePlacement">
-       <img src="media/question.png" rel="media/question-over.png" class="stressBtn" number = "1" />
-       <img src="media/question.png" rel="media/question-over.png" class="stressBtn" number = "2" />
-       <img src="media/question.png" rel="media/question-over.png" class="stressBtn" number = "3" />
-       <img src="media/question.png" rel="media/question-over.png" class="stressBtn" number = "4" />
-  </div>     
-       <div class="information" id="1">Between two and six years of age, children have magical thinking. They need an explanation of events. They must be told they did nothing to cause their brother or sister's illness. </div>
-       
-       <div class="information" id="2">Children greater than three are interested in babies. For those with a sibling in the NICU, seeing pictures of or looking through the window at their new brother or sister may be helpful. There are books specific to siblings about infants in the NICU. </div>
-       
-       <div class="information" id="3">Children less than four years of age may suffer separation anxiety as their parent's time and focus are on the sick sibling. </div>
-       
-       <div class="information" id="4">It is best that the child care for siblings left at home be provided by a familiar person in a familiar environment. </div>
-     </div> 
-    </body>
+});
+</script>
+
+</head>
+<body>
+
+<div id="flashcontent"></div>
+
+<script type="text/javascript">
+//   var so = new SWFObject("media/pg10NurseDialog.swf", "flashmovie", "550", "100", "9", "#000000");
+ //  so.addParam("wmode", "transparent");
+  // so.write("flashcontent");
+</script>
+
+<p><em>Select each photo to learn more about interventions to provide support and education.</em></p>
+
+<div class="scroller">
+	<div class="modal-content">
+        <div id="initialDiv" class="slides">
+			<div id="pg10PicBox">
+            	<div class="pg10PicButton" id="holdingHands" label="1"></div>
+                
+                <div class="pg10PicButton" id="nurseStation" label="3"></div>
+                
+                <div class="pg10PicButton" id="doctorNurses" label="4"></div>
+                
+                <div class="pg10PicButton" id="emptyCrib" label="6"></div>
+            </div>
+        </div><!--end of initialDiv-->
+
+        <div id="nextDiv" class="slides">
+			<div class="modalHidden" id="1">
+                <div class="slide1Visible">
+                    Hanoi and Lu's son has been admitted to the ICU after cardiac surgery for repair of aortic 
+                    stenosis.  They speak Samoan, but do understand English.  They are from a small town two hours 
+                    away, and you are unsure of where they are staying for the night.  As evening comes and it is 
+                    time for change of shift, you note they seem anxious.  You would like to help them feel more 
+                    comfortable.  Proper interventions to help in their time of crisis may include: <em>select all 
+                    that&nbsp;apply.</em>
+                    
+                    <div id="pg10FlashLabels">
+                        <span class="pg10Label">Arrange for language, cultural or religious support during times of 
+                        	high stress.</span>
+                        <span class="pg10Label loquacious">Inquire about family needs, such as lodging, transportation, child 
+                        	care, etc.  Work with the social worker to assist with these needs.</span>
+                        <span class="pg10Label">Assist parents with formulation of questions and concerns.</span>
+                    </div>
+                    
+                    <div id="pg10Flashcontent"></div>
+                    <script type="text/javascript">
+                      // var so = new SWFObject("media/pg10QQ.swf", "flashmovie", "125", "145", "9", "#000000");
+                      // so.addParam("wmode", "transparent");
+                      // so.write("pg10Flashcontent");
+                    </script>
+                </div>
+                
+                <div class="hidden slide1Hidden">
+                	<p>These are all proper interventions to assist the family in crisis. Other interventions&nbsp;include:
+                    	<ul>
+                        	<li>Provide opportunities for the parents to vent feelings and concerns, allowing them 
+                            	to express negative feelings without being judged.</li>
+                            <li>Recognize and identify the family's strengths.</li>
+                            <li>Help family's transitions to life in the ICU.</li>
+                        </ul></p>
+                    <span class="return returnImage"></span>
+                </div>
+            </div><!-- end 1 -->
+            
+            <div class="modalHidden" id="3">
+                Tatum delivered her infant daughter, Piper, at 28 weeks. Piper was immediately admitted to the NICU. 
+                Tatum is emotional and worried not only about her own recovery, but the care of her daughter.  
+                Appropriate interventions to assist her and other parents include:
+                    <ul>
+                        <li>Take the parents on a tour of the unit, or link to other resources (video or web site) 
+                        	when not possible.</li>
+                        <li>Provide booklets to the family which describes the NICU and the professionals involved in 
+                        	their infant's care.</li>
+                        <li>Create a welcoming and warm unit environment.</li>
+                        <li>Do not overwhelm the parents with details during the initial visit to the ICU. The parents 
+                            will appreciate and require detailed information at a later time.</li>
+                        <li>Be attentive to the mother's physical needs post&ndash;delivery.</li>
+                    </ul>
+                <span class="return returnImage"></span>
+            </div>
+            
+            <div class="modalHidden" id="4">
+                Staffing changes, monitors and equipment, and the deluge of medical information can be overwhelming to 
+                parents in the ICU. In order to decrease anxiety and frustration, it is helpful to:
+                    <ul>
+                        <li>Provide families with the names of the staff members providing care to their child.</li>
+                        <li>Help families transition with the rotation of doctors and nurses.</li>
+                        <li>Provide consistent caregivers whenever possible.</li>
+                        <li>Be consistent with the information given to parents.</li>
+                        <li>Arrange for family meetings between family and staff members (e.g., physicians, nurses, 
+                            social worker and chaplain).</li>
+                        <li>Provide continuous updates and information related to the infant's condition via phone or 
+                            directly. Provide the parents a toll&ndash;free number to make long&ndash;distance calls to 
+                            the ICU, if available. If the family does not have a phone due to financial issues, consult 
+                            with social services.</li>
+                    </ul>
+                <span class="return returnImage"></span>
+            </div>
+            
+            <div class="modalHidden" id="6">
+                Marcus and Shania's son has been diagnosed with acute lymphoblastic leukemia. His hospital stay will be 
+                quite extensive. Ways to help the parents deal with their time in the hospital include:
+                    <ul>
+                        <li>Encourage families to personalize their child's bed space with photos of family, small stuffed 
+                        	animals, religious objects, prayers or other such items.</li>
+                        <li>Be consistent with the information given to parents.</li>
+                        <li>Arrange for family meetings between family and staff members (e.g., physicians, nurses, social 
+                            worker and chaplain).</li>
+                    </ul>
+                <span class="return returnImage"></span>
+            </div>
+        </div><!--end of nextDiv-->
+    </div><!--end of modal-content-->
+</div><!--end of scroller-->
+
+</body>
 </html>
