@@ -1,0 +1,120 @@
+body {
+	font-family: arial;
+	font-size: 13px;
+}
+#wrapper {
+	width: 550px;
+	height: 430px;
+}
+
+.scroller {
+	position: absolute;
+	top: 140px;
+	left: 20px;
+	width: 510px;
+	_width: 513px; /* if IE */
+	width: 513px/; /* if IE */
+	*width: 513px; /* if IE */
+	height: 320px;
+	_height: 325px; /* if IE */
+	height: 325px/; /* if IE */
+	*height: 325px; /* if IE */
+	overflow: hidden;
+	border: solid 2px #000000;
+}
+
+.modal-content {
+	position: relative;
+	width: 1050px;
+}
+
+.slides {
+	position: relative;
+	float: left;
+	width: 510px;
+	height: 340px;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+.modalHidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	padding: 5px 5% 0 5%;
+	display: none;
+}
+
+.slide1Visible, .slide1Hidden {
+	position: absolute;
+	top: 5px;
+	left: 22px;
+	width: 480px;
+}
+
+#pg10FlashLabels {
+	position: absolute;
+	top: 108px;
+	left: 33px;
+	width: 450px;
+}
+
+.pg10Label {
+	position: relative;
+	float: left;
+	top: 3px;
+	height: 37px;
+	width: 100%;
+}
+
+.loquacious {
+	height: 40px;
+}
+
+
+.hidden {
+	position: absolute;
+	display: none;
+}
+
+.modalHidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	padding: 5px 5% 0 5%;
+	display: none;
+}
+
+.return {
+	position: absolute;
+	top: 255px;
+	right: 5px;
+	width: 147px;
+	height: 43px;
+	cursor: pointer;
+}
+
+.pg10PicButton {
+	position: relative;
+	float: left;
+	width: 196px;
+	height: 163px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#pg10PicBox {
+	position: absolute;
+	left: 60px;
+	width: 85%;
+	height: 75%;
+}
+
+#holdingHands {background-image: url('hands.png');}
+#nurseStation {background-image: url('station.png');}
+#doctorNurses {background-image: url('docs.png');}
+#emptyCrib {background-image: url('crib.png');}
+.returnImage {background-image: url('back.png');}

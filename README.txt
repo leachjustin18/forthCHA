@@ -1,0 +1,1 @@
+Created a webpage using jQuery animation that shows four images as navigation. After clicking on one of them it will slide over to the left displaying the related information.  Once the information is displayed it provides a back button to see the navgation menu.
